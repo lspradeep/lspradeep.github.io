@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pradeep - Portfolio</title>
+    <title>Pradeep L S - Mobile App Developer</title>
     <style>
         * {
             margin: 0;
@@ -60,10 +60,17 @@
             animation: slideIn 0.8s ease;
         }
 
-        .hero-content p {
-            font-size: 1.5rem;
+        .hero-content .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            animation: slideIn 0.8s ease 0.1s backwards;
+        }
+
+        .hero-content .location {
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            opacity: 0.85;
             animation: slideIn 0.8s ease 0.2s backwards;
         }
 
@@ -76,7 +83,8 @@
             border-radius: 50px;
             font-weight: bold;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: slideIn 0.8s ease 0.4s backwards;
+            animation: slideIn 0.8s ease 0.3s backwards;
+            margin: 0 10px;
         }
 
         .cta-button:hover {
@@ -122,7 +130,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            align-items: center;
+            align-items: start;
         }
 
         .about-text p {
@@ -131,19 +139,58 @@
             color: #555;
         }
 
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .skills-category h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
         .skills {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 12px;
         }
 
         .skill-item {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 15px;
+            padding: 12px 15px;
             border-radius: 8px;
             text-align: center;
             font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #f0f0f0;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #667eea;
+            color: white;
         }
 
         /* Projects Section */
@@ -185,14 +232,11 @@
 
         /* Contact Section */
         .contact-content {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
+            text-align: center;
         }
 
         .contact-item {
-            text-align: center;
+            margin: 20px 0;
         }
 
         .contact-item a {
@@ -216,18 +260,53 @@
             margin-top: 40px;
         }
 
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
             }
 
-            .hero-content p {
-                font-size: 1.2rem;
+            .hero-content .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .hero-content .location {
+                font-size: 1rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             section {
@@ -242,6 +321,19 @@
             nav {
                 gap: 15px;
                 font-size: 0.9rem;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-link {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
@@ -258,9 +350,12 @@
     <!-- Hero Section -->
     <div id="hero" class="hero">
         <div class="hero-content">
-            <h1>Hey, I'm Pradeep 👋</h1>
-            <p>Full Stack Developer & Creative Problem Solver</p>
+            <h1>Pradeep L S</h1>
+            <p class="subtitle">Mobile App Developer</p>
+            <p class="subtitle">Kotlin Multiplatform Specialist</p>
+            <p class="location">📍 Chennai</p>
             <a href="#contact" class="cta-button">Get In Touch</a>
+            <a href="https://play.google.com/store/apps/developer?id=Pradeep+L+S" class="cta-button" target="_blank">Play Store</a>
         </div>
     </div>
 
@@ -270,28 +365,70 @@
         <div class="about-content">
             <div class="about-text">
                 <p>
-                    I'm a passionate developer with a love for creating beautiful, functional web experiences. 
-                    With expertise in full-stack development, I enjoy turning ideas into reality through code.
+                    I'm a passionate mobile app developer based in Chennai with expertise in building high-performance 
+                    cross-platform applications. I specialize in Kotlin and Kotlin Multiplatform technology, creating 
+                    seamless experiences for Android users and beyond.
                 </p>
                 <p>
-                    When I'm not coding, you can find me exploring new technologies, contributing to open source, 
-                    or sharing knowledge with the developer community.
+                    With a strong foundation in Android development and modern frameworks, I'm committed to writing 
+                    clean, maintainable code and staying at the forefront of mobile technology trends.
                 </p>
                 <p>
                     Let's build something amazing together!
                 </p>
-            </div>
-            <div>
-                <h3>Skills</h3>
-                <div class="skills">
-                    <div class="skill-item">HTML & CSS</div>
-                    <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">React</div>
-                    <div class="skill-item">Web Design</div>
-                    <div class="skill-item">Git & GitHub</div>
-                    <div class="skill-item">Responsive Design</div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">11</div>
+                        <div class="stat-label">Followers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">17</div>
+                        <div class="stat-label">Following</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">📱</div>
+                        <div class="stat-label">Developer</div>
+                    </div>
                 </div>
             </div>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Core Skills</h3>
+                    <div class="skills">
+                        <div class="skill-item">Kotlin</div>
+                        <div class="skill-item">Android</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">Kotlin Multiplatform</div>
+                        <div class="skill-item">Compose Multiplatform</div>
+                        <div class="skill-item">Flutter</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3>Additional Skills</h3>
+                    <div class="skills">
+                        <div class="skill-item">Svelte</div>
+                        <div class="skill-item">Unity</div>
+                        <div class="skill-item">Cross-Platform Dev</div>
+                        <div class="skill-item">UI/UX</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://in.linkedin.com/in/pradeepls" class="social-link" target="_blank">
+                💼 LinkedIn
+            </a>
+            <a href="https://github.com/lspradeep" class="social-link" target="_blank">
+                🐙 GitHub
+            </a>
+            <a href="https://play.google.com/store/apps/developer?id=Pradeep+L+S" class="social-link" target="_blank">
+                📱 Google Play
+            </a>
+            <a href="https://itch.io" class="social-link" target="_blank">
+                🎮 Itch.io
+            </a>
         </div>
     </section>
 
@@ -300,19 +437,19 @@
         <h2>Featured Projects</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>A beautiful, responsive portfolio showcasing my work and skills. Built with HTML, CSS, and modern web design principles.</p>
-                <a href="#" class="project-link">View Project →</a>
+                <h3>Kotlin Multiplatform Apps</h3>
+                <p>Building cross-platform applications using Kotlin Multiplatform technology, enabling code sharing across Android, iOS, and web platforms.</p>
+                <a href="https://github.com/lspradeep" class="project-link">View on GitHub →</a>
             </div>
             <div class="project-card">
-                <h3>Web Application</h3>
-                <p>A full-featured web application with a modern user interface. Demonstrates proficiency in front-end and back-end development.</p>
-                <a href="#" class="project-link">View Project →</a>
+                <h3>Android Applications</h3>
+                <p>Crafting performant and beautiful Android applications using modern development practices and the latest Android frameworks.</p>
+                <a href="https://play.google.com/store/apps/developer?id=Pradeep+L+S" class="project-link">View on Play Store →</a>
             </div>
             <div class="project-card">
-                <h3>Open Source Contribution</h3>
-                <p>Active contributor to various open source projects. Passionate about improving code quality and helping the developer community.</p>
-                <a href="#" class="project-link">View Project →</a>
+                <h3>Cross-Platform Solutions</h3>
+                <p>Leveraging Flutter and Compose Multiplatform to create seamless user experiences across multiple platforms efficiently.</p>
+                <a href="https://github.com/lspradeep" class="project-link">Explore More →</a>
             </div>
         </div>
     </section>
@@ -321,24 +458,27 @@
     <section id="contact">
         <h2>Let's Connect</h2>
         <div class="contact-content">
+            <p style="font-size: 1.2rem; margin-bottom: 30px; color: #555;">
+                I'm always interested in hearing about new projects and opportunities.
+            </p>
             <div class="contact-item">
-                <h3>Email</h3>
+                <h3>📧 Email</h3>
                 <a href="mailto:your.email@example.com">your.email@example.com</a>
             </div>
             <div class="contact-item">
-                <h3>GitHub</h3>
-                <a href="https://github.com/lspradeep" target="_blank">github.com/lspradeep</a>
+                <h3>🔗 Connect on LinkedIn</h3>
+                <a href="https://in.linkedin.com/in/pradeepls" target="_blank">linkedin.com/in/pradeepls</a>
             </div>
             <div class="contact-item">
-                <h3>LinkedIn</h3>
-                <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a>
+                <h3>💻 GitHub</h3>
+                <a href="https://github.com/lspradeep" target="_blank">github.com/lspradeep</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Pradeep. All rights reserved. | Built with passion 💜</p>
+        <p>&copy; 2024 Pradeep L S. All rights reserved. | Mobile App Developer | Kotlin Multiplatform Specialist</p>
     </footer>
 </body>
 </html>
