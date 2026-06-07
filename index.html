@@ -3,11 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Pradeep L S | Lead Software Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+    --bg:#0f172a;
+    --card:rgba(255,255,255,0.05);
+    --border:rgba(255,255,255,0.08);
+    --primary:#3b82f6;
+    --secondary:#60a5fa;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+}
+
 *{
     margin:0;
     padding:0;
@@ -15,195 +27,180 @@
     scroll-behavior:smooth;
 }
 
-:root{
-    --primary:#2563eb;
-    --secondary:#1e293b;
-    --bg:#f8fafc;
-    --card:#ffffff;
-    --text:#1f2937;
-    --muted:#64748b;
-}
-
 body{
-    font-family:'Poppins',sans-serif;
+    font-family:'Inter',sans-serif;
     background:var(--bg);
     color:var(--text);
     line-height:1.7;
 }
 
 .container{
-    width:min(1200px,90%);
+    width:min(1100px,92%);
     margin:auto;
 }
 
 section{
-    padding:90px 0;
+    padding:80px 0;
+}
+
+.glass{
+    background:var(--card);
+    backdrop-filter:blur(15px);
+    border:1px solid var(--border);
+    border-radius:24px;
 }
 
 h1,h2,h3{
+    line-height:1.2;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.2rem;
+    margin-bottom:50px;
+}
+
+.highlight{
     color:var(--secondary);
 }
 
-.btn{
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    display:grid;
+    gap:40px;
+}
+
+.profile-card{
+    padding:30px;
+}
+
+.badge{
     display:inline-block;
-    padding:14px 28px;
+    padding:8px 16px;
+    border-radius:999px;
+    background:rgba(59,130,246,.15);
+    color:#93c5fd;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+.btn-group{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
     background:var(--primary);
     color:white;
-    text-decoration:none;
-    border-radius:12px;
-    transition:.3s;
+}
+
+.btn-outline{
+    border:1px solid var(--border);
+    color:white;
 }
 
 .btn:hover{
     transform:translateY(-3px);
 }
 
-header{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:
-    linear-gradient(135deg,#2563eb,#0f172a);
-    color:white;
-}
+/* ABOUT */
 
-.hero{
-    display:grid;
-    grid-template-columns:1.3fr .7fr;
-    gap:50px;
-    align-items:center;
-}
-
-.hero h1{
-    color:white;
-    font-size:4rem;
-    line-height:1.1;
-}
-
-.hero p{
-    margin:20px 0;
-    font-size:1.1rem;
-    opacity:.95;
-}
-
-.profile{
-    width:320px;
-    height:320px;
-    border-radius:50%;
-    background:white;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:7rem;
-    color:var(--primary);
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
-}
-
-nav{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    backdrop-filter:blur(15px);
-    background:rgba(15,23,42,.85);
-}
-
-.nav-container{
-    width:min(1200px,90%);
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
-
-.logo{
-    color:white;
-    font-weight:700;
-    font-size:1.2rem;
-}
-
-nav ul{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-    font-size:2.5rem;
-}
-
-.about-card,
-.card{
-    background:var(--card);
-    border-radius:20px;
+.about{
     padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.skills{
+.about p{
+    color:var(--muted);
+}
+
+/* SKILLS */
+
+.skills-grid{
     display:flex;
     flex-wrap:wrap;
-    gap:15px;
+    gap:12px;
     justify-content:center;
 }
 
 .skill{
-    background:#dbeafe;
-    color:#1d4ed8;
     padding:10px 18px;
-    border-radius:50px;
-    font-weight:500;
+    border-radius:999px;
+    background:rgba(59,130,246,.15);
+    color:#bfdbfe;
 }
+
+/* EXPERIENCE */
 
 .timeline{
     display:grid;
-    gap:25px;
+    gap:20px;
 }
 
-.timeline .card:hover{
-    transform:translateY(-5px);
-}
-
-.card{
-    transition:.3s;
+.exp-card{
+    padding:25px;
 }
 
 .company{
-    color:var(--primary);
+    color:#93c5fd;
     font-weight:600;
 }
+
+.duration{
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+/* PROJECTS */
 
 .projects{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:25px;
+    gap:20px;
 }
 
-.project-card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+.project{
+    padding:25px;
 }
 
-.project-card h3{
+.project h3{
     margin-bottom:10px;
 }
 
-.project-card a{
-    color:var(--primary);
-    text-decoration:none;
-    font-weight:600;
+.project p{
+    color:var(--muted);
+    margin-bottom:15px;
 }
+
+.project a{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+/* CONTACT */
 
 .contact{
     text-align:center;
@@ -213,252 +210,324 @@ nav a{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
+    gap:15px;
     margin-top:30px;
 }
 
 .contact-links a{
     text-decoration:none;
     color:white;
-    background:var(--primary);
-    padding:12px 20px;
-    border-radius:12px;
+    background:rgba(59,130,246,.15);
+    border:1px solid var(--border);
+    padding:14px 20px;
+    border-radius:14px;
+}
+
+/* MOBILE NAV */
+
+.mobile-nav{
+    position:fixed;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:999;
+    background:rgba(15,23,42,.95);
+    backdrop-filter:blur(20px);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:10px 18px;
+}
+
+.mobile-nav ul{
+    display:flex;
+    gap:22px;
+    list-style:none;
+}
+
+.mobile-nav a{
+    text-decoration:none;
+    color:white;
+    font-size:1.1rem;
 }
 
 footer{
     text-align:center;
+    color:var(--muted);
     padding:30px;
-    background:#0f172a;
-    color:white;
 }
 
-@media(max-width:768px){
+/* TABLET */
 
-.hero{
-    grid-template-columns:1fr;
-    text-align:center;
+@media(min-width:768px){
+
+.hero-content{
+    grid-template-columns:2fr 1fr;
+    align-items:center;
 }
 
 .hero h1{
-    font-size:2.8rem;
+    font-size:4rem;
 }
 
-.profile{
-    width:220px;
-    height:220px;
+.projects{
+    grid-template-columns:repeat(2,1fr);
 }
+
 }
+
+/* DESKTOP */
+
+@media(min-width:1024px){
+
+.projects{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.mobile-nav{
+    top:20px;
+    bottom:auto;
+    right:30px;
+    left:auto;
+    transform:none;
+}
+
+}
+
 </style>
 </head>
 <body>
 
-<nav>
-<div class="nav-container">
-<div class="logo">Pradeep L S</div>
+<!-- HERO -->
 
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
-</nav>
+<section class="hero">
+<div class="container">
 
-<header>
-<div class="container hero">
+<div class="hero-content">
 
 <div>
-<h1>Pradeep L S</h1>
-<h3>Lead Software Engineer</h3>
+
+<span class="badge">
+Lead Software Engineer
+</span>
+
+<h1>
+Hi, I'm <span class="highlight">Pradeep L S</span>
+</h1>
 
 <p>
-Kotlin & Android specialist with 8+ years of professional experience
-building scalable mobile and multiplatform applications.
-Delivered 10+ production applications across product and service domains.
+Android & Kotlin Multiplatform Engineer with 8+ years of experience building scalable mobile, desktop and cross-platform applications using Kotlin, Jetpack Compose and Compose Multiplatform.
 </p>
 
-<a href="#projects" class="btn">View My Work</a>
+<div class="btn-group">
+<a href="#projects" class="btn btn-primary">View Projects</a>
+<a href="#contact" class="btn btn-outline">Contact Me</a>
 </div>
 
-<div class="profile">
-👨‍💻
+</div>
+
+<div class="glass profile-card">
+
+<h3>Tech Focus</h3>
+
+<br>
+
+<p>📱 Android</p>
+<p>⚡ Kotlin</p>
+<p>🎨 Jetpack Compose</p>
+<p>🌍 Kotlin Multiplatform</p>
+<p>💻 Compose Multiplatform</p>
+<p>🍏 SwiftUI</p>
+
 </div>
 
 </div>
-</header>
+
+</div>
+</section>
+
+<!-- ABOUT -->
 
 <section id="about">
+
 <div class="container">
 
-<h2 class="section-title">About Me</h2>
+<h2 class="section-title">
+About Me
+</h2>
 
-<div class="about-card">
+<div class="glass about">
+
 <p>
-Organized, collaborative and skilled software engineer with extensive experience
-in Android, Kotlin Multiplatform and Compose Multiplatform development.
-Passionate about creating high-performance mobile applications, scalable architectures,
-and delightful user experiences.
+I specialize in building high-performance mobile and cross-platform applications. Over the years I've worked on large-scale products across Android, Desktop and Multiplatform ecosystems, helping teams deliver reliable, maintainable and user-friendly software.
 </p>
+
 </div>
 
 </div>
+
 </section>
+
+<!-- SKILLS -->
 
 <section id="skills">
+
 <div class="container">
 
-<h2 class="section-title">Skills</h2>
+<h2 class="section-title">
+Skills
+</h2>
 
-<div class="skills">
-<div class="skill">Kotlin</div>
-<div class="skill">Android</div>
-<div class="skill">Jetpack Compose</div>
-<div class="skill">Compose Multiplatform</div>
-<div class="skill">Kotlin Multiplatform</div>
-<div class="skill">SwiftUI</div>
-<div class="skill">Swift</div>
-<div class="skill">Java</div>
-<div class="skill">Git</div>
-<div class="skill">CI/CD</div>
-<div class="skill">Desktop Development</div>
-<div class="skill">Cross Platform Apps</div>
+<div class="skills-grid">
+
+<span class="skill">Kotlin</span>
+<span class="skill">Android</span>
+<span class="skill">Jetpack Compose</span>
+<span class="skill">Kotlin Multiplatform</span>
+<span class="skill">Compose Multiplatform</span>
+<span class="skill">SwiftUI</span>
+<span class="skill">Java</span>
+<span class="skill">Ktor</span>
+<span class="skill">SQLDelight</span>
+<span class="skill">Coroutines</span>
+<span class="skill">MVVM</span>
+<span class="skill">CI/CD</span>
+
 </div>
 
 </div>
+
 </section>
 
+<!-- EXPERIENCE -->
+
 <section id="experience">
+
 <div class="container">
 
-<h2 class="section-title">Work Experience</h2>
+<h2 class="section-title">
+Experience
+</h2>
 
 <div class="timeline">
 
-<div class="card">
-<h3>Senior Software Engineer</h3>
-<p class="company">Trimble (2024 - Present)</p>
-<p>
-Developing Unity Field, an offline-first asset management platform.
-Built a Kotlin Multiplatform application targeting Android, iOS and Desktop.
-Worked with Ktorfit, SQLDelight, PreCompose and JavaFX.
-</p>
+<div class="glass exp-card">
+<h3>Trimble</h3>
+<div class="company">Senior Software Engineer</div>
+<div class="duration">2024 - Present</div>
 </div>
 
-<div class="card">
-<h3>Senior Software Engineer</h3>
-<p class="company">Magzter (2021 - 2024)</p>
-<p>
-Developed and published Magzter Desktop using Compose Multiplatform.
-Built Android applications and contributed to major products including
-BlibliMags, CloudLibrary Newsstand and Edzter.
-</p>
+<div class="glass exp-card">
+<h3>Magzter</h3>
+<div class="company">Senior Software Engineer</div>
+<div class="duration">2021 - 2024</div>
 </div>
 
-<div class="card">
-<h3>Software Engineer</h3>
-<p class="company">Zuper (2018 - 2021)</p>
-<p>
-Developed field service management applications including
-Zuper Pro and Zuper Manager with attendance, tracking,
-team management and invoice capabilities.
-</p>
+<div class="glass exp-card">
+<h3>Zuper</h3>
+<div class="company">Software Engineer</div>
+<div class="duration">2018 - 2021</div>
 </div>
 
 </div>
 
 </div>
+
 </section>
 
+<!-- PROJECTS -->
+
 <section id="projects">
+
 <div class="container">
 
-<h2 class="section-title">Featured Projects</h2>
+<h2 class="section-title">
+Featured Projects
+</h2>
 
 <div class="projects">
 
-<div class="project-card">
+<div class="glass project">
 <h3>Quicktionary</h3>
 <p>
-A smart dictionary and vocabulary learning application designed
-for quick word lookup and language improvement.
+Vocabulary building and dictionary application designed for fast word lookup and learning.
 </p>
-<br>
 <a href="https://play.google.com/store/apps/details?id=org.pradeep.quicktionary" target="_blank">
 View on Play Store →
 </a>
 </div>
 
-<div class="project-card">
+<div class="glass project">
 <h3>DSA Learn</h3>
 <p>
-Data Structures & Algorithms learning app helping students and
-developers understand core computer science concepts.
+Data Structures and Algorithms learning platform for students and software engineers.
 </p>
-<br>
 <a href="https://play.google.com/store/apps/details?id=com.pradeep.dsalearn" target="_blank">
 View on Play Store →
 </a>
 </div>
 
-<div class="project-card">
-<h3>Compose Multiplatform Media</h3>
+<div class="glass project">
+<h3>KMP Showcase</h3>
 <p>
-Experimental Kotlin Multiplatform media application showcasing
-shared UI and business logic across multiple platforms.
-</p>
-</div>
-
-<div class="project-card">
-<h3>Anime Quotes App</h3>
-<p>
-Kotlin Multiplatform application featuring shared business logic
-and UI implementation across Android and iOS.
+Cross-platform applications built using Kotlin Multiplatform and Compose Multiplatform.
 </p>
 </div>
 
 </div>
 
 </div>
+
 </section>
 
-<section>
-<div class="container">
-
-<h2 class="section-title">Education</h2>
-
-<div class="about-card">
-<h3>Electrical & Electronics Engineering</h3>
-<p>Velammal Engineering College</p>
-<p>2014 – 2018</p>
-</div>
-
-</div>
-</section>
+<!-- CONTACT -->
 
 <section id="contact">
-<div class="container contact">
 
-<h2 class="section-title">Let's Connect</h2>
+<div class="container">
+
+<h2 class="section-title">
+Let's Connect
+</h2>
+
+<div class="contact">
 
 <p>
-Interested in Android, Kotlin Multiplatform, Compose Multiplatform,
-or product development opportunities?
+Interested in Android, Kotlin Multiplatform or Compose Multiplatform development?
 </p>
 
 <div class="contact-links">
-<a href="mailto:lspradeep21@gmail.com">Email</a>
-<a href="https://github.com/lspradeep" target="_blank">GitHub</a>
-<a href="https://linkedin.com/in/pradeepls" target="_blank">LinkedIn</a>
+
+<a href="mailto:your@email.com">Email</a>
+
+<a href="https://github.com/yourusername" target="_blank">
+GitHub
+</a>
+
+<a href="https://linkedin.com/in/yourprofile" target="_blank">
+LinkedIn
+</a>
+
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 <footer>
 © 2026 Pradeep L S • Lead Software Engineer
 </footer>
+
+<nav class="mobile-nav">
+<ul>
+<li><a href="#about">👤</a></li>
+<li><a href="#skills">⚡</a></li>
+<li><a href="#experience">💼</a></li>
+<li><a href="#projects">🚀</a></li>
+<li><a href="#contact">📧</a></li>
+</ul>
+</nav>
 
 </body>
 </html>
